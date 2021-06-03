@@ -19,7 +19,7 @@ export default defineConfig({
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
   },
-  dynamicImport: {
+  dynamicImport: { // 动态加载
     loading: '@/components/PageLoading/index',
   },
   targets: {
