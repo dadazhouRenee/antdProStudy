@@ -25,10 +25,12 @@ class Search extends Component {
         break;
     }
   };
+
   handleFormSubmit = (value) => {
     // eslint-disable-next-line no-console
     console.log(value);
   };
+
   getTabKey = () => {
     const { match, location } = this.props;
     const url = match.path === '/' ? '' : match.path;

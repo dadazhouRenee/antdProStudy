@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Applications from './components/Applications';
 import styles from './Center.less';
+
 const operationTabList = [
   {
     key: 'articles',
@@ -145,6 +146,7 @@ class Center extends Component {
   state = {
     tabKey: 'articles',
   };
+
   input = undefined;
 
   componentDidMount() {
@@ -165,6 +167,7 @@ class Center extends Component {
       tabKey: key,
     });
   };
+
   renderChildrenByTabKey = (tabKey) => {
     if (tabKey === 'projects') {
       return <Projects />;
@@ -180,6 +183,7 @@ class Center extends Component {
 
     return null;
   };
+
   renderUserInfo = (currentUser) => (
     <div className={styles.detail}>
       <p>
