@@ -71,7 +71,6 @@ const BasicLayout = (props) => {
       pathname: '/',
     },
   } = props;
-  console.log('props', props)
   const menuDataRef = useRef([]);
   useEffect(() => {
     if (dispatch) {
@@ -170,5 +169,5 @@ const BasicLayout = (props) => {
 // models 里面的 namespace
 export default connect(({ global, settings }) => ({
   collapsed: global.collapsed,
-  settings
+  settings,
 }))(BasicLayout);
