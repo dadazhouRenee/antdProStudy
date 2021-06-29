@@ -89,6 +89,8 @@ class Analysis extends Component {
       return '';
     }
 
+    // http://momentjs.cn/docs/query/is-same.html
+    // params 传入 day 会检验 year month day 是否相同
     if (
       rangePickerValue[0].isSame(value[0], 'day') &&
       rangePickerValue[1].isSame(value[1], 'day')
