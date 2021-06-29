@@ -19,6 +19,11 @@ const topColResponsiveProps = {
   },
 };
 
+// To optimize...
+// FormattedMessage ===> useIntl.formatMessage({
+//     id: "dashboardandanalysis.analysis.total-sales"
+//     defaultMessage: "Total Sales"
+// })
 const IntroduceRow = ({ loading, visitData }) => (
   <Row gutter={24}>
     <Col {...topColResponsiveProps}>
@@ -201,7 +206,18 @@ const IntroduceRow = ({ loading, visitData }) => (
         }
         contentHeight={46}
       >
-        <MiniProgress percent={78} strokeWidth={8} target={80} color="#13C2C2" />
+        <MiniProgress
+          percent={78}
+          strokeWidth={8}
+          target={80}
+          targetLabel={
+            <FormattedMessage
+              id="dashboardandanalysis.analysis.operational-effect"
+              defaultMessage="Operational Effect"
+            />
+          }
+          color="#13C2C2"
+        />
       </ChartCard>
     </Col>
   </Row>

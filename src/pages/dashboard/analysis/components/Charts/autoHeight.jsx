@@ -17,7 +17,7 @@ function getAutoHeight(n) {
 
   const node = n;
   let height = computeHeight(node);
-  const {parentNode} = node;
+  const { parentNode } = node;
 
   if (parentNode) {
     height = computeHeight(parentNode);
@@ -26,6 +26,9 @@ function getAutoHeight(n) {
   return height;
 }
 
+/**
+ * see more HOC  https://zh-hans.reactjs.org/docs/higher-order-components.html
+ *  */
 function autoHeight() {
   return (WrappedComponent) => {
     class AutoHeightComponent extends React.Component {
@@ -37,7 +40,6 @@ function autoHeight() {
 
       componentDidMount() {
         const { height } = this.props;
-
         if (!height) {
           let h = getAutoHeight(this.root);
           this.setState({
