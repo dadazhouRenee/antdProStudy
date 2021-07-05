@@ -22,7 +22,7 @@ for (let i = 0; i < 7; i += 1) {
     total: 323234,
   });
 }
-const innerContent = ({ rankData = [], chartData = [], key }) => {
+const InnerContent = ({ rankData = [], chartData = [], key }) => {
   if (!key) return null;
   return (
     <Row>
@@ -129,11 +129,7 @@ const SalesCard = ({
           tab={<FormattedMessage id="dashboardandanalysis.analysis.sales" defaultMessage="Sales" />}
           key="sales"
         >
-          {innerContent({
-            chartData: salesData,
-            rankData: rankingListData,
-            key: 'sales',
-          })}
+          <InnerContent chartData={salesData} rankData={rankingListData} key="sales" />
         </TabPane>
         <TabPane
           tab={
@@ -141,11 +137,7 @@ const SalesCard = ({
           }
           key="views"
         >
-          {innerContent({
-            chartData: salesData,
-            rankData: rankingListData,
-            key: 'visits',
-          })}
+          <InnerContent chartData={salesData} rankData={rankingListData} key="visits" />
         </TabPane>
       </Tabs>
     </div>
