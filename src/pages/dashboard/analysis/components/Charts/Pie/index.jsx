@@ -90,7 +90,7 @@ class Pie extends Component {
 
     if (!geom) return;
     const items = geom.get('dataArray') || []; // 获取图形对应的
-
+    // 自定义legend数据
     const legendData = items.map((item) => {
       /* eslint no-underscore-dangle:0 */
       const origin = item[0]._origin;
@@ -115,6 +115,7 @@ class Pie extends Component {
     const filteredLegendData = legendData.filter((l) => l.checked).map((l) => l.x);
 
     if (this.chart) {
+      // 图表交互
       this.chart.filter('x', (val) => filteredLegendData.indexOf(`${val}`) > -1);
     }
 
@@ -201,6 +202,7 @@ class Pie extends Component {
     ];
     const padding = [12, 0, 12, 0];
     const dv = new DataView();
+    // see more: https://www.yuque.com/antv/g2-docs/api-transform#s8grqx
     dv.source(data).transform({
       type: 'percent',
       field: 'y',
