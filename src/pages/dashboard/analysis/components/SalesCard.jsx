@@ -22,8 +22,8 @@ for (let i = 0; i < 7; i += 1) {
     total: 323234,
   });
 }
-const InnerContent = ({ rankData = [], chartData = [], key }) => {
-  if (!key) return null;
+const InnerContent = ({ rankData = [], chartData = [], keyName }) => {
+  if (!keyName) return null;
   return (
     <Row>
       <Col xl={16} lg={12} md={12} sm={24} xs={24}>
@@ -32,8 +32,8 @@ const InnerContent = ({ rankData = [], chartData = [], key }) => {
             height={295}
             title={
               <FormattedMessage
-                id={`dashboardandanalysis.analysis.${key}-trend`}
-                defaultMessage={`${key} Trend`}
+                id={`dashboardandanalysis.analysis.${keyName}-trend`}
+                defaultMessage={`${keyName} Trend`}
               />
             }
             data={chartData}
@@ -44,8 +44,8 @@ const InnerContent = ({ rankData = [], chartData = [], key }) => {
         <div className={styles.salesRank}>
           <h4 className={styles.rankingTitle}>
             <FormattedMessage
-              id={`dashboardandanalysis.analysis.${key}-ranking`}
-              defaultMessage={`${key} Ranking`}
+              id={`dashboardandanalysis.analysis.${keyName}-ranking`}
+              defaultMessage={`${keyName} Ranking`}
             />
           </h4>
           <ul className={styles.rankingList}>
@@ -129,7 +129,7 @@ const SalesCard = ({
           tab={<FormattedMessage id="dashboardandanalysis.analysis.sales" defaultMessage="Sales" />}
           key="sales"
         >
-          <InnerContent chartData={salesData} rankData={rankingListData} key="sales" />
+          <InnerContent chartData={salesData} rankData={rankingListData} keyName="sales" />
         </TabPane>
         <TabPane
           tab={
@@ -137,7 +137,8 @@ const SalesCard = ({
           }
           key="views"
         >
-          <InnerContent chartData={salesData} rankData={rankingListData} key="visits" />
+          <div>1111</div>
+          <InnerContent chartData={salesData} rankData={rankingListData} keyName="visits" />
         </TabPane>
       </Tabs>
     </div>
