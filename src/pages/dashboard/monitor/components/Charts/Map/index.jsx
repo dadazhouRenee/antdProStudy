@@ -70,6 +70,7 @@ export default class Map extends React.Component {
             }}
           />
         )}
+        {/* see more: https://l7.antv.vision/zh/docs/api/layer/point_layer/pointlayer */}
         {data && [
           <PointLayer
             key="2"

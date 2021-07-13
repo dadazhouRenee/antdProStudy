@@ -175,7 +175,7 @@ class TagCloud extends Component {
               type="point"
               position="x*y"
               color="text"
-              shape="cloud"
+              shape="cloud" /* cloud 是自定义Shape */
               tooltip={[
                 'text*value',
                 function trans(text, value) {

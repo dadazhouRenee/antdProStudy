@@ -23,7 +23,7 @@ class Monitor extends Component {
     const { tags } = dashboardAndmonitor;
     return (
       <GridContent>
-        <React.Fragment>
+        <>
           <Row gutter={24}>
             <Col
               xl={18}
@@ -269,12 +269,12 @@ class Monitor extends Component {
                       defaultMessage="Fund Surplus"
                     />
                   }
-                  percent={34}
+                  percent={66}
                 />
               </Card>
             </Col>
           </Row>
-        </React.Fragment>
+        </>
       </GridContent>
     );
   }
