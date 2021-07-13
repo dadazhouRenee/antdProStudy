@@ -98,6 +98,9 @@ class Workplace extends Component {
   }
 
   renderActivities = (item) => {
+    /**
+     * template eg: '在 @{group} 新建项目 @{project}'
+     *  */
     const events = item.template.split(/@\{([^{}]*)\}/gi).map((key) => {
       if (item[key]) {
         return (

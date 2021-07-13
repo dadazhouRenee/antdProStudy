@@ -3,10 +3,12 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import styles from './index.less';
 
+/* 函数组件 */
 const EditableLinkGroup = (props) => {
   const { links, linkElement, onAdd } = props;
   return (
     <div className={styles.linkGroup}>
+      {/* focus: createElemnt 参数: https://zh-hans.reactjs.org/docs/react-api.html#createelement */}
       {links.map((link) =>
         createElement(
           linkElement,
