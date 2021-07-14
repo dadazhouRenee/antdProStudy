@@ -19,7 +19,8 @@ export default defineConfig({
     // default true, when it is true, will use `navigator.language` overwrite default
     baseNavigator: true,
   },
-  dynamicImport: { // 动态加载
+  dynamicImport: {
+    // 动态加载
     loading: '@/components/PageLoading/index',
   },
   targets: {
@@ -333,4 +334,43 @@ export default defineConfig({
     basePath: '/',
   },
   esbuild: {},
+  // 配置具体含义见：https://github.com/umijs/umi-webpack-bundle-analyzer#options-for-plugin
+  analyze: {
+    analyzerMode: 'server',
+    analyzerPort: 8889,
+    openAnalyzer: true,
+    // generate stats file while ANALYZE_DUMP exist
+    generateStatsFile: false,
+    statsFilename: 'stats.json',
+    logLevel: 'info',
+    defaultSizes: 'parsed', // stat  // gzip
+  },
+  // chunks: REACT_APP_ENV !== 'dev' ? ['lodash','antd', '@ant-design', 'umi'] : ['umi'],
+  // chainWebpack: function (config, { webpack }) {
+  //   config.merge({
+  //     optimization: {
+  //       splitChunks: {
+  //         chunks: 'all',
+  //         // minSize: 30000,
+  //         // minChunks: 3,
+  //         automaticNameDelimiter: '.',
+  //         cacheGroups: {
+  //           vendor: {
+  //             name: 'vendors',
+  //             test({ resource }) {
+  //               return /[\\/]node_modules[\\/]((?!(lodash)).*)[\\/]/.test(resource);
+  //             },
+  //             priority: 20,
+  //           },
+  //           lodash: {
+  //             name: 'lodash',
+  //             chunks: 'all',
+  //             test: /[\\/]node_modules[\\/]((lodash).*)[\\/]/,
+  //             priority: 20,
+  //           },
+  //         },
+  //       },
+  //     },
+  //   });
+  // },
 });
