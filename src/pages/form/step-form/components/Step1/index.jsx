@@ -13,6 +13,7 @@ const formItemLayout = {
   },
 };
 
+/* 完全受控组件 */
 const Step1 = (props) => {
   const { dispatch, data } = props;
   const [form] = Form.useForm();

@@ -12,7 +12,7 @@ const { TextArea } = Input;
 
 const BasicForm = (props) => {
   const { submitting } = props;
-  const [form] = Form.useForm();
+  const [form] = Form.useForm(); /* class组件: createRef() 为Form绑定ref */
   const [showPublicUsers, setShowPublicUsers] = React.useState(false);
   const formItemLayout = {
     labelCol: {
@@ -69,6 +69,7 @@ const BasicForm = (props) => {
   return (
     <PageContainer content={<FormattedMessage id="formandbasic-form.basic.description" />}>
       <Card bordered={false}>
+        {/* hideRequiredMark参数: https://github.com/ant-design/ant-design/blob/ba6de5ba1810968885c99950b5a9197bd01e4ce5/components/form/Form.tsx#L78 */}
         <Form
           hideRequiredMark
           style={{
